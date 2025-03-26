@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
@@ -17,10 +19,40 @@ function SponsorCard({photo, name}) {
   </div>
 }
 
+function ImageCard() {
+  return <div className="min-w-[300px] min-h-[300px] bg-yellow-500 hover:scale-105 hover:rotate-[2deg] transition duration-300">Hii</div>;
+}
+
 export default function Home() {
+  useEffect(() => {
+    const horizontalScrollContainer = document.getElementsByClassName('horizontal-scroll-container');
+  
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const scrollX = -scrollY * 0.5;
+      for (let h of horizontalScrollContainer)
+        h.style.transform = `translateX(${scrollX}px)`;
+    });
+  }, []);
+
   return (<>
     <div>Hero</div>
     <div>About</div>
+
+    <div className="p-4 pb-12">
+      <div className="relative w-full overflow-x-hidden">
+        <div className="flex gap-5 horizontal-scroll-container pb-5">
+          {Array(15).fill(0).map(() => <ImageCard />)}
+        </div>
+        <div className="relative left-[12.5%] flex gap-5 horizontal-scroll-container pb-5">
+          {Array(15).fill(0).map(() => <ImageCard />)}
+        </div>
+        <div className="relative left-[25%] flex gap-5 horizontal-scroll-container">
+          {Array(15).fill(0).map(() => <ImageCard />)}
+        </div>
+      </div>
+    </div>
+
     <div className="flex flex-col items-center">
       <h1 className="text-5xl w-full text-center">EVENTS</h1>
       <div className="flex w-[65vw] justify-between gap-8 my-8 flex-wrap">
