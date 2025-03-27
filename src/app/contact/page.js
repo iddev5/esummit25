@@ -12,9 +12,9 @@ export default function Contact() {
     return (<>
         <div className="flex flex-col items-center">
             <h1 className="text-5xl w-full text-center">THE TEAM</h1>
-            <div className="flex flex-col w-[65vw] items-center gap-8 my-8 flex-wrap">
+            <div className="flex flex-col w-[85vw] md:w-[65vw] items-center text-center gap-8 my-8 flex-wrap">
                 <h1 className="text-3xl uppercase">For any website related queries:</h1>
-                <div className="flex gap-10">
+                <div className="flex flex-col md:flex-row gap-10">
                     <Team name="Someone" post="Tech Lead" />
                     <Team name="Someone" post="Tech Lead" />
                 </div>

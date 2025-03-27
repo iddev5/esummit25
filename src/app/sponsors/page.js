@@ -13,7 +13,7 @@ export default function Sponsors() {
         <div className="flex flex-col w-[65vw] justify-center gap-8 my-8 flex-wrap">
             
             <SponsorCard name='Company X' what='Co-Powered By' />
-            <div className="flex justify-center gap-10">
+            <div className="flex flex-col md:flex-row justify-center gap-10">
                 <SponsorCard name='Company X' what='Outing partner' />
                 <SponsorCard name='Company X' what='Tech partner' />
                 <SponsorCard name='Company X' what='Some partner' />
