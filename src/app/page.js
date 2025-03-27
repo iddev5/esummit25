@@ -20,7 +20,11 @@ function SponsorCard({photo, name}) {
 }
 
 function ImageCard() {
-  return <div className="min-w-[300px] min-h-[300px] bg-yellow-500 hover:scale-105 hover:rotate-[2deg] transition duration-300">Hii</div>;
+  return <div className="min-w-[150px] min-h-[150px] md:min-w-[300px] md:min-h-[300px] bg-yellow-500 
+    hover:scale-105 hover:rotate-[2deg] transition duration-300 active:scale-105 active:rotate-[2deg]"
+  >
+    Hii
+  </div>;
 }
 
 export default function Home() {
@@ -41,13 +45,13 @@ export default function Home() {
 
     <div className="p-4 pb-12">
       <div className="relative w-full overflow-x-hidden">
-        <div className="flex gap-5 horizontal-scroll-container pb-5">
+        <div className="flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
           {Array(15).fill(0).map(() => <ImageCard />)}
         </div>
-        <div className="relative left-[12.5%] flex gap-5 horizontal-scroll-container pb-5">
+        <div className="relative left-[12.5%] flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
           {Array(15).fill(0).map(() => <ImageCard />)}
         </div>
-        <div className="relative left-[25%] flex gap-5 horizontal-scroll-container">
+        <div className="relative left-[25%] flex gap-2 md:gap-5 horizontal-scroll-container">
           {Array(15).fill(0).map(() => <ImageCard />)}
         </div>
       </div>

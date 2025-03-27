@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Footer() {
     return <footer className="w-screen bg-black">
         <div>
-            <div className="flex justify-between py-4 px-10 mb-6 border-b-1 border-solid border-white">
-                <p className="text-md">Get connected with us on social networks:</p>
+            <div className="flex justify-center md:justify-between py-4 px-10 mb-6 border-b-1 border-solid border-white">
+                <p className="text-md hidden md:block">Get connected with us on social networks:</p>
                 <div className="flex gap-2">             
                     <a href='https://twitter.com/ecellvssut?lang=en' className="mr-6 text-neutral-600 dark:text-neutral-200 hover:no-underline hover:text-cyan-500">
                         <svg
@@ -49,14 +49,14 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="flex justify-between px-10 py-10">
+            <div className="flex flex-col gap-8 md:gap-0 md:flex-row justify-between px-10 py-10">
                 <Image 
                     src='/assets/logo.png'
                     width={619}
                     height={288}
                     className="h-[50px] w-auto object-contain"
                 />
-                <div>
+                <div className="flex flex-col items-center text-center">
                     <p>IMPORTANT LINKS</p>
                     <ul>
                         <li>Home</li>
@@ -65,7 +65,7 @@ export default function Footer() {
                         <li>Speakers</li>
                     </ul>
                 </div>
-                <div>
+                <div className="flex flex-col items-center text-center">
                     <p>USEFUL LINKS</p>
                     <ul>
                         <li>Contact</li>
@@ -74,7 +74,7 @@ export default function Footer() {
                         <li>E-Cell</li>
                     </ul>
                 </div>
-                <div>
+                <div className="flex flex-col items-center text-center">
                     <p>CONTACTS</p>
                     <div>
                         <p className="mb-4 flex items-center justify-center md:justify-start main-font ">
