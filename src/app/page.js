@@ -36,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (<>
-    <div>Hero</div>
+    <div className="pt-22">Hero</div>
     <div>About</div>
 
     <div className="p-4 pb-12">

@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Footer() {
-    return <footer className="w-screen px-10">
+    return <footer className="w-screen bg-black">
         <div>
-            <div className="flex justify-between">
+            <div className="flex justify-between py-4 px-10 mb-6 border-b-1 border-solid border-white">
                 <p className="text-md">Get connected with us on social networks:</p>
                 <div className="flex gap-2">             
                     <a href='https://twitter.com/ecellvssut?lang=en' className="mr-6 text-neutral-600 dark:text-neutral-200 hover:no-underline hover:text-cyan-500">
@@ -47,8 +49,13 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="flex justify-between">
-                <p>LOGO</p>
+            <div className="flex justify-between px-10 py-10">
+                <Image 
+                    src='/assets/logo.png'
+                    width={619}
+                    height={288}
+                    className="h-[50px] w-auto object-contain"
+                />
                 <div>
                     <p>IMPORTANT LINKS</p>
                     <ul>
