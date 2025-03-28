@@ -8,7 +8,7 @@ function SpeakerCard({photo, name, desig}) {
 
 export default function Speakers() {
     return (<>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-24">
         <h1 className="text-5xl w-full text-center">OUR SPEAKERS</h1>
         <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
             {(new Array(10)).fill(1).map(() =>

@@ -8,7 +8,7 @@ function SponsorCard({photo, name, what}) {
 
 export default function Sponsors() {
     return (<>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-24">
         <h1 className="text-5xl w-full text-center">OUR SPONSORS</h1>
         <div className="flex flex-col w-[65vw] justify-center gap-8 my-8 flex-wrap">
             

@@ -2,7 +2,7 @@ import EventCard from "@/components/EventCard"
 
 export default function Events() {
     return (<>
-        <div>Event Hero</div>
+        <div className='mt-24'>Event Hero</div>
         <div className="flex flex-col items-center">
         <h1 className="text-5xl w-full text-center">EVENTS</h1>
         <div className="flex w-[65vw] justify-between gap-8 my-8 flex-wrap">
