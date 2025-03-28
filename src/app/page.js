@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
@@ -29,6 +29,18 @@ function ImageCard() {
 
 export default function Home() {
   useEffect(() => {
+    const startAnimation = (entries, observer) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("animate-zoom-in", entry.isIntersecting);
+      });
+    };
+
+    const observer = new IntersectionObserver(startAnimation);
+    const options = { root: null, rootMargin: '0px', threshold: 0.8 }; 
+
+    const element = document.getElementById('video-parent');
+    observer.observe(element, options);
+
     const horizontalScrollContainer = document.getElementsByClassName('horizontal-scroll-container');
   
     window.addEventListener('scroll', () => {
@@ -39,9 +51,32 @@ export default function Home() {
     });
   }, []);
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true;
+
+      try {
+        video.play();
+      } catch (error) {
+        console.warn('Autoplay failed:', error);
+      }
+    }
+  }, []);
+
   return (<>
     <div className="pt-22">Hero</div>
     <div>About</div>
+
+      <div className="w-screen bg-[#171717] z-[200] flex items-center justify-center">
+        <video id='video-parent' ref={videoRef} autoPlay muted loop className="w-[100vw] video-mask">
+          <source src='./assets/teaser.mp4' type='video/mp4' />
+          Video tag is not supported
+        </video>
+      </div>
 
     <div className="p-4 pb-12">
       <div className="relative w-full overflow-x-hidden">

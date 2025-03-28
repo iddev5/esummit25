@@ -19,6 +19,18 @@ body {
   overflow-x: hidden;
 }
 
+.video-mask {
+  -webkit-mask-image: url(/assets/video-mask.svg);
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  
+  mask-image: url(/assets/video-mask.svg);
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
 .animate-marquee {
   animation: marquee 15s linear infinite;
 }
@@ -34,4 +46,13 @@ body {
 @keyframes marquee2 {
   0% { transform: translateX(-100%) }
   100% { transform: translateX(0%) }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 5s ease-in forwards;
+}
+
+@keyframes zoom-in {
+  0% { mask-size: 30%; }
+  100% { mask-size: 1000% }
 }
