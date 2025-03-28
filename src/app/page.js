@@ -69,14 +69,17 @@ export default function Home() {
 
   return (<>
     <div className="pt-22">Hero</div>
-    <div>About</div>
+    <div className='text-center flex flex-col items-center justify-center gap-8 h-[50vh]'>
+      <h1 className='text-6xl uppercase'>What is E-Summit?</h1>
+      <p className='text-lg w-[60vw]'>E-Summit 2025, the biggest entrepreneurial event of western Odisha hosted by E-Cell, VSSUT Burla, brings together industry leaders, visionaries, and budding entrepreneurs in a symphony of innovation and inspiration. It will act as a vibrant platform featuring panel discussions, workshops, and captivating keynote sessions.</p>
+    </div>
 
-      <div className="w-screen bg-[#171717] z-[200] flex items-center justify-center">
-        <video id='video-parent' ref={videoRef} autoPlay muted loop className="w-[100vw] video-mask">
-          <source src='./assets/teaser.mp4' type='video/mp4' />
-          Video tag is not supported
-        </video>
-      </div>
+    <div className="w-screen bg-[#171717] z-[200] flex items-center justify-center">
+      <video id='video-parent' ref={videoRef} autoPlay muted loop className="w-[100vw] video-mask">
+        <source src='./assets/teaser.mp4' type='video/mp4' />
+        Video tag is not supported
+      </video>
+    </div>
 
     <div className="p-4 pb-12">
       <div className="relative w-full overflow-x-hidden">
