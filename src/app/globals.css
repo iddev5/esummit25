@@ -70,6 +70,7 @@ body {
   100% { mask-size: 1000% }
 }
 
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -196,4 +197,28 @@ html.has-scroll-dragging {
 .scale-in.is-revealed {
   transform: scale(1);
   opacity: 1;
+=======
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+.animate-rise {
+  animation: rise 2s ease-in-out forwards;
+}
+
+@keyframes rise {
+  0% { width: 0%; opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+>>>>>>> 2d47d65c670d4f4dbc8a0cb326cf5afaf598e84a
 }
