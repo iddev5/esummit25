@@ -28,7 +28,7 @@ body {
   mask-image: url(/assets/video-mask.svg);
   mask-position: center center;
   mask-repeat: no-repeat;
-  mask-size: contain;
+  mask-size: 30%;
 }
 
 .animate-marquee {

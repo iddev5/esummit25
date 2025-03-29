@@ -5,16 +5,16 @@ import Link from "next/link";
 import EventCard from "@/components/EventCard";
 
 function SpeakerCard({photo, name, desig}) {
-  return <div className="flex flex-col items-center gap-2">
-    <div className="w-[150px] h-[150px] rounded-full bg-red-500"></div>
+  return <div className="flex flex-col text-center items-center gap-2 w-[10vw]">
+    <Image src={photo} className="h-[150px] w-[150px] aspect-square object-cover rounded-full" width={150} height={0} />
     <h1 className="text-xl">{name}</h1>
     <p className="text-sm">{desig}</p>
   </div>
 }
 
 function SponsorCard({photo, name}) {
-  return <div className="flex flex-col items-center gap-2">
-    <div className="w-[150px] h-[150px] rounded-full bg-red-500"></div>
+  return <div className="flex flex-col text-center items-center gap-2 w-[10vw]">
+    <Image src={photo} className="h-[150px] w-[150px] aspect-square object-cover rounded-full" width={150} height={0} />
     <h1 className="text-xl">{name}</h1>
   </div>
 }
@@ -26,6 +26,27 @@ function ImageCard() {
     Hii
   </div>;
 }
+
+const speakers = [
+  { img: '/assets/past-speakers/khalid.jpg', name: 'Khalid Wani', desig: 'Founder & Ceo of KWCG, Director at ONE CAPITAL NBFC, TDEX SPEAKER' },
+  { img: '/assets/past-speakers/satyajeet.jpg', name: 'Satyajeet Pattnaik', desig: 'Co-founder of Fydo' },
+  { img: '/assets/past-speakers/archana.jpg', name: 'Archana Tripathy', desig: 'Tata-cumins, Co-founder of The Kalinga Heritage' },
+  { img: '/assets/past-speakers/debabrata.jpeg', name: 'Debabrata Giri', desig: 'DGM of Tata-Motors' },
+  { img: '/assets/past-speakers/chinmayee.jpeg', name: 'Chinmay Satpathy', desig: 'Founder & CEO of Village Kraft' },
+  { img: '/assets/past-speakers/samar.jpg', name: 'Samar Pratap Naayak', desig: 'Founder & MD of Olive Ridley Media' },
+  { img: '/assets/past-speakers/sasmita.jpeg', name: 'Sasmita Samanta', desig: 'Founder & Chairperson at SOUL Limited' },
+  { img: '/assets/past-speakers/vvgiri.jpeg', name: 'Vonkayala Venkata Giri', desig: 'CTO at KFin Technologies' },
+]
+
+const sponsors = [
+  { img: '/assets/past-sponsors/unstop.jpg', name: 'Unstop' },
+  { img: '/assets/past-sponsors/village Kraft.jpeg', name: 'Village Kraft' },
+  { img: '/assets/past-sponsors/scomm india.jpeg', name: 'SCOMM India' },
+  { img: '/assets/past-sponsors/pc.jpg', name: 'Prabhu Chandra' },
+  { img: '/assets/past-sponsors/nextgen.jpeg', name: 'NexGen' },
+  { img: '/assets/past-sponsors/entertainment kingdom.jpeg', name: 'Entertainment Kingdom' },
+  { img: '/assets/past-sponsors/burger company.jpg', name: 'The Burger Company' },
+]
 
 export default function Home() {
   useEffect(() => {
@@ -69,12 +90,13 @@ export default function Home() {
 
   return (<>
     <div className="pt-22">Hero</div>
+
     <div className='text-center flex flex-col items-center justify-center gap-8 h-[50vh]'>
-      <h1 className='text-6xl uppercase'>What is E-Summit?</h1>
-      <p className='text-lg w-[60vw]'>E-Summit 2025, the biggest entrepreneurial event of western Odisha hosted by E-Cell, VSSUT Burla, brings together industry leaders, visionaries, and budding entrepreneurs in a symphony of innovation and inspiration. It will act as a vibrant platform featuring panel discussions, workshops, and captivating keynote sessions.</p>
+      <h1 className='text-3xl md:text-6xl uppercase'>What is E-Summit?</h1>
+      <p className='md:text-lg w-[85vw] md:w-[60vw]'>E-Summit 2025, the biggest entrepreneurial event of western Odisha hosted by E-Cell, VSSUT Burla, brings together industry leaders, visionaries, and budding entrepreneurs in a symphony of innovation and inspiration. It will act as a vibrant platform featuring panel discussions, workshops, and captivating keynote sessions.</p>
     </div>
 
-    <div className="w-screen bg-[#171717] z-[200] flex items-center justify-center">
+    <div className="w-screen bg-[#171717] z-[200] flex items-center justify-center" style={{ 'box-shadow': 'inset 0px 10px 20px #171717' }}>
       <video id='video-parent' ref={videoRef} autoPlay muted loop className="w-[100vw] video-mask">
         <source src='./assets/teaser.mp4' type='video/mp4' />
         Video tag is not supported
@@ -106,14 +128,14 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <h1 className="text-5xl w-full text-center">PAST SPEAKERS</h1>
       <div className="relative flex overflow-x-hidden w-screen gap-10 my-12">
-        <div className="flex gap-10 animate-marquee whitespace-nowrap">
-          {Array(8).fill(0).map((it, i) => 
-            <SpeakerCard name='Mr. Test' desig='Helping e-cell' />
+        <div className="flex gap-10 animate-marquee">
+          {speakers.map((it) => 
+            <SpeakerCard photo={it.img} name={it.name} desig={it.desig} />
           )}
         </div>
-        <div className="flex gap-10 animate-marquee whitespace-nowrap">
-          {Array(8).fill(0).map(it => 
-            <SpeakerCard name='Mr. Test' desig='Helping e-cell' />
+        <div className="flex gap-10 animate-marquee">
+          {speakers.map((it) => 
+            <SpeakerCard photo={it.img} name={it.name} desig={it.desig} />
           )}
         </div>
       </div>
@@ -122,14 +144,14 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <h1 className="text-5xl w-full text-center">PAST SPONSORS</h1>
       <div className="relative flex overflow-x-hidden w-screen gap-10 my-12">
-        <div className="flex gap-10 animate-marquee2 whitespace-nowrap">
-          {Array(8).fill(0).map((it, i) => 
-            <SponsorCard name='Company X' />
+        <div className="flex gap-10 animate-marquee2">
+          {sponsors.map((it) => 
+            <SponsorCard photo={it.img} name={it.name} />
           )}
         </div>
-        <div className="flex gap-10 animate-marquee2 whitespace-nowrap">
-          {Array(8).fill(0).map(it => 
-            <SponsorCard name='Company X' />
+        <div className="flex gap-10 animate-marquee2">
+          {sponsors.map((it) => 
+            <SponsorCard photo={it.img} name={it.name} />
           )}
         </div>
       </div>
