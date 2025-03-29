@@ -51,25 +51,65 @@ const sponsors = [
 
 export default function Home() {
   useEffect(() => {
+    {
+      const startAnimation = (entries, observer) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle("animate-zoom-in", entry.isIntersecting);
+        });
+      };
+
+      const observer = new IntersectionObserver(startAnimation);
+      const options = { root: null, rootMargin: '0px', threshold: 0.8 }; 
+
+      const element = document.getElementById('video-parent');
+      observer.observe(element, options);
+   }
+
+   {
     const startAnimation = (entries, observer) => {
       entries.forEach(entry => {
-        entry.target.classList.toggle("animate-zoom-in", entry.isIntersecting);
+        entry.target.classList.toggle("animate-fade-in", entry.isIntersecting);
       });
     };
 
     const observer = new IntersectionObserver(startAnimation);
-    const options = { root: null, rootMargin: '0px', threshold: 0.8 }; 
+    const options = { root: null, rootMargin: '0px', threshold: 1.0 }; 
 
-    const element = document.getElementById('video-parent');
-    observer.observe(element, options);
+    const elements = document.querySelectorAll('.anim-toggle-fade-in');
+    console.log(elements);
+    elements.forEach(element => 
+      observer.observe(element, options)
+    );
+  }
+
+  {
+    const startAnimation = (entries, observer) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("animate-rise", entry.isIntersecting);
+      });
+    };
+
+    const observer = new IntersectionObserver(startAnimation);
+    const options = { root: null, rootMargin: '0px', threshold: 1.0 }; 
+
+    const elements = document.querySelectorAll('.anim-rise');
+    console.log(elements);
+    elements.forEach(element => 
+      observer.observe(element, options)
+    );
+  }
 
     const horizontalScrollContainer = document.getElementsByClassName('horizontal-scroll-container');
   
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const scrollX = -scrollY * 0.5;
-      for (let h of horizontalScrollContainer)
-        h.style.transform = `translateX(${scrollX}px)`;
+      for (let h of horizontalScrollContainer) {
+        if (h.classList.contains('hsc-r'))
+          h.style.transform = `translateX(${-scrollX}px)`;
+        else
+          h.style.transform = `translateX(${scrollX}px)`;
+      }
     });
   }, []);
 
@@ -105,11 +145,12 @@ export default function Home() {
     </div>
 
     <div className="p-4 pb-12">
+      <h1 className="text-center text-6xl m-6 mt-16">E-Summit '24 at a glance!</h1>
       <div className="relative w-full overflow-x-hidden">
         <div className="flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
           {Array(15).fill(0).map(() => <ImageCard />)}
         </div>
-        <div className="relative left-[12.5%] flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
+        <div className="relative left-[-75%] flex gap-2 md:gap-5 horizontal-scroll-container hsc-r pb-2 md:pb-5">
           {Array(15).fill(0).map(() => <ImageCard />)}
         </div>
         <div className="relative left-[25%] flex gap-2 md:gap-5 horizontal-scroll-container">
@@ -118,19 +159,30 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="flex flex-col items-center">
-      <h1 className="text-5xl w-full text-center">EVENTS</h1>
+    <div className="flex flex-col items-center my-10">
+      <div className="flex flex-col gap-5 w-[60vw] text-right">
+        <div className="text-4xl relative uppercase bg-yellow-500 max-w-[80%] opacity-0 anim-rise p-3 py-8">
+          <p className="absolute right-2 bottom-3">2000+&nbsp;Attendees</p>
+        </div>
+        <div className="text-4xl relative uppercase bg-yellow-500 max-w-[50%] opacity-0 anim-rise p-3 py-8">
+          <p className="absolute right-2 bottom-3">30+&nbsp;Startups</p>
+        </div>
+        <div className="text-4xl relative uppercase bg-yellow-500 max-w-[30%] opacity-0 anim-rise p-3 py-8">
+          <p className="absolute right-2 bottom-3">10+&nbsp;Events</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="flex flex-col items-center mb-6">
+      <h1 className="text-5xl w-full text-center opacity-0 anim-toggle-fade-in">EVENTS</h1>
       <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
         {events.map((it) => 
           <EventCard title={it.title} desc={it.desc} reg_url={it.reg_url} details_url={it.details_url} />
         )}
-        {/* {(new Array(10)).fill(1).map(() =>
-          <EventCard title="Hello" desc={"Some long text on event. ".repeat(7)} reg_url='https://www.google.com' details_url='/events' />
-        )} */}
       </div>
     </div>
     <div className="flex flex-col items-center">
-      <h1 className="text-5xl w-full text-center">PAST SPEAKERS</h1>
+      <h1 className="text-5xl w-full text-center opacity-0 anim-toggle-fade-in">PAST SPEAKERS</h1>
       <div className="relative flex overflow-x-hidden w-screen gap-10 my-12">
         <div className="flex gap-10 animate-marquee">
           {speakers.map((it) => 
@@ -146,7 +198,7 @@ export default function Home() {
     </div>
 
     <div className="flex flex-col items-center">
-      <h1 className="text-5xl w-full text-center">PAST SPONSORS</h1>
+      <h1 className="text-5xl w-full text-center opacity-0 anim-toggle-fade-in">PAST SPONSORS</h1>
       <div className="relative flex overflow-x-hidden w-screen gap-10 my-12">
         <div className="flex gap-10 animate-marquee2">
           {sponsors.map((it) => 
