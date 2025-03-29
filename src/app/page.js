@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
+import { events } from "@/constants";
 
 function SpeakerCard({photo, name, desig}) {
   return <div className="flex flex-col text-center items-center gap-2 w-[10vw]">
@@ -119,10 +120,13 @@ export default function Home() {
 
     <div className="flex flex-col items-center">
       <h1 className="text-5xl w-full text-center">EVENTS</h1>
-      <div className="flex w-[65vw] justify-between gap-8 my-8 flex-wrap">
-        {(new Array(10)).fill(1).map(() =>
-          <EventCard title="Hello" desc={"Some long text on event. ".repeat(7)} reg_url='https://www.google.com' details_url='/events' />
+      <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
+        {events.map((it) => 
+          <EventCard title={it.title} desc={it.desc} reg_url={it.reg_url} details_url={it.details_url} />
         )}
+        {/* {(new Array(10)).fill(1).map(() =>
+          <EventCard title="Hello" desc={"Some long text on event. ".repeat(7)} reg_url='https://www.google.com' details_url='/events' />
+        )} */}
       </div>
     </div>
     <div className="flex flex-col items-center">
