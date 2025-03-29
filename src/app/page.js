@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
 import { events } from "@/constants";
+import Parallax from "@/components/Parallax";
 
 function SpeakerCard({ photo, name, desig }) {
   return (
@@ -117,8 +118,8 @@ export default function Home() {
     const observer = new IntersectionObserver(startAnimation);
     const options = { root: null, rootMargin: "0px", threshold: 0.8 };
 
-    const element = document.getElementById("video-parent");
-    observer.observe(element, options);
+    // const element = document.getElementById("video-parent");
+    // observer.observe(element, options);
 
     const horizontalScrollContainer = document.getElementsByClassName(
       "horizontal-scroll-container"
@@ -150,7 +151,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="pt-22">Hero</div>
+      <div>
+        <Parallax />
+      </div>
+
+      {/* <div className="pt-22">Hero</div>
 
       <div className="text-center flex flex-col items-center justify-center gap-8 h-[50vh]">
         <h1 className="text-3xl md:text-6xl uppercase">What is E-Summit?</h1>
@@ -178,9 +183,9 @@ export default function Home() {
           <source src="./assets/teaser.mp4" type="video/mp4" />
           Video tag is not supported
         </video>
-      </div>
+      </div> */}
 
-      <div className="p-4 pb-12">
+      {/* <div className="p-4 pb-12">
         <div className="relative w-full overflow-x-hidden">
           <div className="flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
             {Array(15)
@@ -204,7 +209,7 @@ export default function Home() {
               ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center">
         <h1 className="text-5xl w-full text-center">EVENTS</h1>
