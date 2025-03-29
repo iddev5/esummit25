@@ -1,24 +1,31 @@
-function Team({photo, name, post, x, fb, ln, ig}) {
-    return <div className="w-[200px] h-[200px] group hover:scale-115 transition rounded-md border-solid border-2 border-green-500">
-        <div className="p-4 w-full h-full bg-red-500 flex flex-col items-center justify-center">
-            <div className="bg-green-500 w-[150px] h-[150px] z-[100] group-hover:rounded-full rounded-lg"></div> {/* IMAGE */}
-            <h1 className="text-xl">{name}</h1>
-            <p className="opacity-0 absolute group-hover:relative group-hover:opacity-100 transition">{post}</p>
-        </div>
-    </div>
-}
+"use client";
 
-export default function Contact() {
-    return (<>
-        <div className="flex flex-col items-center mt-24">
-            <h1 className="text-5xl w-full text-center">THE TEAM</h1>
-            <div className="flex flex-col w-[85vw] md:w-[65vw] items-center text-center gap-8 my-8 flex-wrap">
-                <h1 className="text-3xl uppercase">For any website related queries:</h1>
-                <div className="flex flex-col md:flex-row gap-10">
-                    <Team name="Someone" post="Tech Lead" />
-                    <Team name="Someone" post="Tech Lead" />
-                </div>
-            </div>
+import ContactCard from "@/components/ContactCard";
+
+export default function ContactPage() {
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] pt-20 pb-10">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-[#fbc503] text-center mb-12">
+          Our Team
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+          <ContactCard
+            imageSrc="/assets/past-speakers/khalid.jpg"
+            name="Anshu Agrawal"
+            designation="Co-Ordinator"
+            socialLinks={{
+              linkedin: "https://linkedin.com/in/anshu",
+              instagram: "https://instagram.com/anshu",
+              facebook: "https://facebook.com/anshu",
+              twitter: "https://twitter.com/anshu",
+            }}
+          />
+
+          {/* Add more ContactCard components as needed */}
         </div>
-    </>);
+      </div>
+    </div>
+  );
 }

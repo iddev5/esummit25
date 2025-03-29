@@ -44,8 +44,10 @@ export default function Accordion({ title, answer }) {
             : "grid-rows-[0fr] opacity-0 decoration-0"
         }`}
       >
-        <div className="overflow-hidden mt-1 decoration-0 main-font text-white">{answer}</div>
+        <div className="overflow-hidden mt-1 decoration-0 main-font text-white">
+          {answer}
+        </div>
       </div>
     </div>
   );
-};
+}
