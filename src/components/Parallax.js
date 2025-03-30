@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './parallax.module.css';
+import Gallery from './Gallery';
 
 function Parallax() {
     useEffect(() => {
@@ -115,16 +116,11 @@ function Parallax() {
       </section>
       <section className={`${styles.plot} ${styles.group}`} data-parallax="group">
         <div
-          className={`${styles['plot--content']} ${styles.layer}`}
+          className={`${styles['plot--content']} ${styles.layer} z-[-1]`}
           data-parallax="layer"
           data-parallax-speed="base"
         >
-          <h2>Synopsis</h2>
-          <p>
-            The Avengers and their allies must be willing to sacrifice all in an
-            attempt to defeat the powerful Thanos before his blitz of devastation
-            and ruin puts an end to the universe.
-          </p>
+          <Gallery />
         </div>
         <div
           className={`${styles.layer} ${styles.character}`}
