@@ -84,6 +84,7 @@ function Parallax() {
           discussions, workshops, and captivating keynote sessions.
           </p>
         </div>
+        <Image src='/assets/images/leo.png' width={563} height={364} className='relative bottom-0' />
       </section>
       <section className={`${styles.parallax} ${styles.group}`} data-parallax="group">
         <div className={`${styles.layer} w-full flex flex-col items-center justify-center`} data-parallax="layer" data-parallax-speed="base">
@@ -119,7 +120,7 @@ function Parallax() {
           className={`${styles.layer} ${styles['deep-stars']}`}
           data-parallax="layer"
           data-parallax-speed="slowest"
-          style={{ backgroundImage: `url('./assets/images/money.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/money.jpg')`, transform: 'scale(1.0)' }}
         ></div>
       </section>
       <section className={`${styles.plot} ${styles.group}`} data-parallax="group">
@@ -130,7 +131,7 @@ function Parallax() {
         >
           <Gallery />
         </div>
-        <div
+        {/* <div
           className={`${styles.layer} ${styles.character}`}
           data-parallax="layer"
           data-parallax-speed="slowest"
@@ -171,7 +172,7 @@ function Parallax() {
           data-parallax-speed="slow"
           style={{ backgroundImage: `url('./assets/images/scarlet-witch-2.png')` }}
           data-image="scarlet-witch-2"
-        ></div>
+        ></div> */}
       </section>
       <footer className={styles.footer} data-parallax="none">
         <video
@@ -179,7 +180,8 @@ function Parallax() {
             autoPlay
             muted
             loop
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] z-[100]"
+            // style={{ filter: 'brightness(70%)' }}
             >
             <source src="./assets/teaser.mp4" type="video/mp4" />
             Video tag is not supported

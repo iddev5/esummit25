@@ -46,7 +46,7 @@
     height: auto; /* Adjusted height */
     perspective: none; /* Removed perspective */
     transform-style: flat; /* Adjusted transform style */
-    padding: 20vh 0;
+    padding: 0 0;
   }
 
   .img-wrapper {

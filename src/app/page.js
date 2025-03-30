@@ -214,7 +214,7 @@ export default function Home() {
       </div> */}
 
       <div className="flex flex-col items-center mt-12">
-        <h1 className="text-5xl w-full text-center">EVENTS</h1>
+        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 my-10">EVENTS</h1>
         <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
           {events.map((it) => (
             <EventCard
@@ -229,7 +229,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center py-16">
-        <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12">
+        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 mb-15 mt-20">
           PAST SPEAKERS
         </h1>
         <div className="relative flex overflow-x-hidden w-full">
@@ -260,7 +260,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center py-16">
-        <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12">
+        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 mb-15 mt-20">
           PAST SPONSORS
         </h1>
         <div className="relative flex overflow-x-hidden w-full">
@@ -285,8 +285,8 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center py-16">
-        <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12 uppercase">
-          Frequently Asked Questions
+        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 mb-15 mt-15">
+          FAQ
         </h1>
         <div className="w-[80vw] md:w-[60vw] p-4 rounded-lg flex flex-col mb-10">
           <Accordion
