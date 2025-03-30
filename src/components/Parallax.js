@@ -85,16 +85,16 @@ function Parallax() {
           <div className=''>
               <div className="flex flex-col items-center my-10">
               <div className="flex flex-col gap-5 w-[60vw] text-right">
-                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[80%] opacity-0 anim-rise p-3 py-8">
-                      <p className="absolute right-2 bottom-3">2000+&nbsp;Attendees</p>
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[80%] opacity-0 anim-rise p-3 py-10">
+                      <p className="absolute right-6 bottom-5">2000+&nbsp;Attendees</p>
                   </div>
 
-                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[50%] opacity-0 anim-rise p-3 py-8">
-                      <p className="absolute right-2 bottom-3">30+&nbsp;Startups</p>
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[50%] opacity-0 anim-rise p-3 py-10">
+                      <p className="absolute right-6 bottom-5">30+&nbsp;Startups</p>
                   </div>
 
-                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[30%] opacity-0 anim-rise p-3 py-8">
-                      <p className="absolute right-2 bottom-3">10+&nbsp;Events</p>
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[30%] opacity-0 anim-rise p-3 py-10">
+                      <p className="absolute right-6 bottom-5">10+&nbsp;Events</p>
                   </div>
               </div>
               </div>
