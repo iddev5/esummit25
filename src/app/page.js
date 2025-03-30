@@ -212,11 +212,12 @@ export default function Home() {
         </div>
       </div> */}
 
-      {/* <div className="flex flex-col items-center mt-12">
+      <div className="flex flex-col items-center mt-12">
         <h1 className="text-5xl w-full text-center">EVENTS</h1>
         <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
           {events.map((it) => (
             <EventCard
+              logo={it.logo}
               title={it.title}
               desc={it.desc}
               reg_url={it.reg_url}
@@ -224,11 +225,6 @@ export default function Home() {
             />
           ))}
         </div>
-      </div> */}
-
-      <h1 className="text-3xl md:text-5xl font-bold w-full text-center mt-12">EVENTS</h1>
-      <div className="w-screen flex items-center">
-        <EventCarousel />
       </div>
 
       <div className="flex flex-col items-center py-16 bg-[#1a1a1a]">
