@@ -220,7 +220,7 @@ header.group {
 }
 
 .preamble {
-  background-color: white;
+  background-color: black;
   box-shadow: 0 0 10vh rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 10;
@@ -256,9 +256,9 @@ header.group {
 
 .plot {
   height: fit-content;
-  padding-bottom: 120vw;
+  padding-bottom: 80vw;
   overflow: hidden;
-  background-color: white;
+  background-color: black;
 }
 .plot h2 {
   width: 100%;

@@ -36,48 +36,53 @@ function Parallax() {
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slowest"
-          style={{ backgroundImage: `url('./assets/images/1.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/1.jpg')`, filter: 'brightness(50%)' }}
           data-image="captain-america"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slower"
-          style={{ backgroundImage: `url('./assets/images/3.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/3.jpg')`, filter: 'brightness(50%)' }}
           data-image="scarlet-witch"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slow"
-          style={{ backgroundImage: `url('./assets/images/5.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/5.jpg')`, filter: 'brightness(50%)' }}
           data-image="black-widow"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slower"
-          style={{ backgroundImage: `url('./assets/images/4.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/4.jpg')`, filter: 'brightness(50%)' }}
           data-image="vision"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slowest"
-          style={{ backgroundImage: `url('./assets/images/2.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/2.jpg')`, filter: 'brightness(50%)' }}
           data-image="iron-man"
         ></div>
       </header>
       <section className={styles.preamble} data-parallax="none">
-        <div>
-            <h1 className="text-3xl text-black md:text-6xl uppercase text-center mb-12">What is E-Summit?</h1>
-            <p className="md:text-lg text-black w-[85vw] md:w-[60vw]">
-            E-Summit 2025, the biggest entrepreneurial event of western Odisha
-            hosted by E-Cell, VSSUT Burla, brings together industry leaders,
-            visionaries, and budding entrepreneurs in a symphony of innovation and
-            inspiration. It will act as a vibrant platform featuring panel
-            discussions, workshops, and captivating keynote sessions.
-            </p>
+        <div className='flex relative -top-15 flex-col w-screen justify-center items-center'>
+          <div className='flex relative justify-center items-center mb-12 gap-8'>
+            <h1 className="text-3xl text-white md:text-7xl uppercase text-center flex-grow">What is</h1>
+            <Image src='/assets/esummit_name.png' width={3819} height={665} className='h-[90px] w-auto object-contain'
+              style={{ filter: 'drop-shadow(0px 0px 15px #ffd35b)' }} />
+            <h1 className="text-3xl text-white md:text-7xl uppercase text-center flex-grow">?</h1>
+          </div>
+          <p className="md:text-2xl text-white w-[85vw] md:w-[60vw] text-center">
+          E-Summit 2025, the biggest entrepreneurial event of western Odisha
+          hosted by E-Cell, VSSUT Burla, brings together industry leaders,
+          visionaries, and budding entrepreneurs in a symphony of innovation and
+          inspiration. It will act as a vibrant platform featuring panel
+          discussions, workshops, and captivating keynote sessions.
+          </p>
         </div>
       </section>
       <section className={`${styles.parallax} ${styles.group}`} data-parallax="group">

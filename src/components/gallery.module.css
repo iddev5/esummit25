@@ -25,6 +25,15 @@
     height: 1px;
   } */
   
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .horizontal-scroll-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
   .horizontal-scroll-wrapper {
     display: flex;
     flex-direction: row; /* Changed from column to row */
