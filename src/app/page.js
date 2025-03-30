@@ -6,6 +6,7 @@ import EventCard from "@/components/EventCard";
 import { events } from "@/constants";
 import Parallax from "@/components/Parallax";
 import EventCarousel from "@/components/EventCarousal";
+import Accordion from "@/components/Accordion";
 
 function SpeakerCard({ photo, name, desig }) {
   return (
@@ -227,12 +228,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center py-16 bg-[#1a1a1a]">
+      <div className="flex flex-col items-center py-16">
         <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12">
           PAST SPEAKERS
         </h1>
         <div className="relative flex overflow-x-hidden w-full">
-          <div className="flex whitespace-nowrap animate-marquee">
+          <div className="flex animate-marquee">
             {speakers.map((it, index) => (
               <SpeakerCard
                 key={index}
@@ -243,7 +244,7 @@ export default function Home() {
             ))}
           </div>
           <div
-            className="flex whitespace-nowrap animate-marquee"
+            className="flex animate-marquee"
             aria-hidden="true"
           >
             {speakers.map((it, index) => (
@@ -263,13 +264,13 @@ export default function Home() {
           PAST SPONSORS
         </h1>
         <div className="relative flex overflow-x-hidden w-full">
-          <div className="flex whitespace-nowrap animate-marquee2">
+          <div className="flex animate-marquee2">
             {sponsors.map((it, index) => (
               <SponsorCard key={index} photo={it.img} name={it.name} />
             ))}
           </div>
           <div
-            className="flex whitespace-nowrap animate-marquee2"
+            className="flex animate-marquee2"
             aria-hidden="true"
           >
             {sponsors.map((it, index) => (
@@ -281,6 +282,27 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col items-center py-16">
+        <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12 uppercase">
+          Frequently Asked Questions
+        </h1>
+        <div className="w-[80vw] md:w-[50vw] p-4 rounded-lg flex flex-col mb-10">
+          <Accordion 
+            title='Question'
+            answer='Answer here'
+          />
+          <Accordion 
+            title='Question'
+            answer='Answer here'
+          />
+          <Accordion 
+            title='Question'
+            answer='Answer here'
+          />
+        </div>
+
       </div>
     </>
   );

@@ -7,7 +7,7 @@ export default function EventCard({ logo, title, desc, reg_url, details_url }) {
     <div className={styles['flip-card']}>
       <div className={styles['flip-card-inner']}>
         <div className={styles['flip-card-front']}>
-          <Image src={logo} alt="Event" width={300} height={300} />
+          <Image src={logo} alt="Event" width={300} height={300} className="rounded-lg" />
         </div>
         <div className={styles["flip-card-back"]}>
           <p>{desc}</p>
