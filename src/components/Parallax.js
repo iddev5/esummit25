@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './parallax.module.css';
 import Gallery from './Gallery';
+import Image from 'next/image';
 
 function Parallax() {
     useEffect(() => {
@@ -29,10 +30,7 @@ function Parallax() {
           data-parallax="layer"
           data-parallax-speed="front"
         >
-          <h1>
-            E-Summit<span>2025</span>
-          </h1>
-          <p>E-Cell, VSSUT</p>
+          <Image src='/assets/esummit.png' width={9795} height={4500} />
         </div>
         <div
           className={styles.layer}
