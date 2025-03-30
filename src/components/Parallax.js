@@ -78,11 +78,7 @@ function Parallax() {
             <h1 className="text-3xl text-white md:text-7xl uppercase text-center flex-grow">?</h1>
           </div>
           <p className="md:text-2xl text-white w-[85vw] md:w-[60vw] text-center">
-          E-Summit 2025, the biggest entrepreneurial event of western Odisha
-          hosted by E-Cell, VSSUT Burla, brings together industry leaders,
-          visionaries, and budding entrepreneurs in a symphony of innovation and
-          inspiration. It will act as a vibrant platform featuring panel
-          discussions, workshops, and captivating keynote sessions.
+            This year, E-Summit 2025, the leading entrepreneurial event in western Odisha from E-Cell, VSSUT Burla, is channeling its inner "Wolf of Wall Street." We're assembling industry heavyweights, forward-thinking visionaries, and ambitious budding entrepreneurs for a dynamic gathering. Prepare for engaging panel discussions, skill-building workshops, and keynote sessions packed with the kind of insights that can build empires.
           </p>
         </div>
         <Image src='/assets/images/leo.png' width={563} height={364} className='relative bottom-0' />
