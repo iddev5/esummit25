@@ -30,6 +30,7 @@ function Parallax() {
           data-parallax="layer"
           data-parallax-speed="front"
         >
+          <div className='absolute left-0 -top-5 blur-xl w-full h-[40px] bg-black text-black'>.</div>
           <Image src='/assets/esummit.png' width={9795} height={4500} />
         </div>
         <div
