@@ -225,6 +225,8 @@ export default function Home() {
           ))}
         </div>
       </div> */}
+
+      <h1 className="text-3xl md:text-5xl font-bold w-full text-center mt-12">EVENTS</h1>
       <div className="w-screen flex items-center">
         <EventCarousel />
       </div>

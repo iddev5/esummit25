@@ -32,6 +32,7 @@ const EventCarousel = () => {
       >
         {events.map((it) => (
             <EventCard
+              logo={it.logo}
               title={it.title}
               desc={it.desc}
               reg_url={it.reg_url}
