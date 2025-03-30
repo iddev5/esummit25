@@ -43,28 +43,28 @@ function Parallax() {
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slower"
-          style={{ backgroundImage: `url('./assets/images/2.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/3.jpg')` }}
           data-image="scarlet-witch"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slow"
-          style={{ backgroundImage: `url('./assets/images/3.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/5.jpg')` }}
           data-image="black-widow"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slower"
-          style={{ backgroundImage: `url('./assets/images/2.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/4.jpg')` }}
           data-image="vision"
         ></div>
         <div
           className={styles.layer}
           data-parallax="layer"
           data-parallax-speed="slowest"
-          style={{ backgroundImage: `url('./assets/images/1.jpg')` }}
+          style={{ backgroundImage: `url('./assets/images/2.jpg')` }}
           data-image="iron-man"
         ></div>
       </header>
@@ -81,36 +81,41 @@ function Parallax() {
         </div>
       </section>
       <section className={`${styles.parallax} ${styles.group}`} data-parallax="group">
-        <div className={styles.layer} data-parallax="layer" data-parallax-speed="base"></div>
-        <div>
-            <div className="flex flex-col items-center my-10">
-            <div className="flex flex-col gap-5 w-[60vw] text-right">
-                <div className="text-4xl relative uppercase bg-yellow-500 max-w-[80%] opacity-0 anim-rise p-3 py-8">
-                    <p className="absolute right-2 bottom-3">2000+&nbsp;Attendees</p>
-                </div>
+        <div className={`${styles.layer} w-full flex flex-col items-center justify-center`} data-parallax="layer" data-parallax-speed="base">
+          <div className=''>
+              <div className="flex flex-col items-center my-10">
+              <div className="flex flex-col gap-5 w-[60vw] text-right">
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[80%] opacity-0 anim-rise p-3 py-8">
+                      <p className="absolute right-2 bottom-3">2000+&nbsp;Attendees</p>
+                  </div>
 
-                <div className="text-4xl relative uppercase bg-yellow-500 max-w-[50%] opacity-0 anim-rise p-3 py-8">
-                    <p className="absolute right-2 bottom-3">30+&nbsp;Startups</p>
-                </div>
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[50%] opacity-0 anim-rise p-3 py-8">
+                      <p className="absolute right-2 bottom-3">30+&nbsp;Startups</p>
+                  </div>
 
-                <div className="text-4xl relative uppercase bg-yellow-500 max-w-[30%] opacity-0 anim-rise p-3 py-8">
-                    <p className="absolute right-2 bottom-3">10+&nbsp;Events</p>
-                </div>
-            </div>
-            </div>
+                  <div className="text-4xl relative uppercase bg-yellow-500 max-w-[30%] opacity-0 anim-rise p-3 py-8">
+                      <p className="absolute right-2 bottom-3">10+&nbsp;Events</p>
+                  </div>
+              </div>
+              </div>
+          </div>
+
+
         </div>
+        
         {/* <div
           className={`${styles.layer} ${styles.stars}`}
           data-parallax="layer"
           data-parallax-speed="slow"
-          style={{ backgroundImage: `url('./assets/images/blue-star-sky.png')` }}
-        ></div>
+          style={{ backgroundImage: `url('./assets/images/money.jpg')` }}
+        ></div> */}
+        
         <div
           className={`${styles.layer} ${styles['deep-stars']}`}
           data-parallax="layer"
           data-parallax-speed="slowest"
-          style={{ backgroundImage: `url('./assets/images/blue-star-sky.png')` }}
-        ></div> */}
+          style={{ backgroundImage: `url('./assets/images/money.jpg')` }}
+        ></div>
       </section>
       <section className={`${styles.plot} ${styles.group}`} data-parallax="group">
         <div
