@@ -46,7 +46,7 @@
     height: auto; /* Adjusted height */
     perspective: none; /* Removed perspective */
     transform-style: flat; /* Adjusted transform style */
-    padding: 0 0;
+    padding: 0 5vw;
   }
 
   .img-wrapper {
@@ -105,13 +105,14 @@
     font-size: 1rem;
   }
   
-  .img-wrapper a {
+  .img-wrapper img {
     overflow: hidden;
     display: block;
     /* padding: 1vh ; */
     /* background: #efecdb; */
-    box-shadow: 0 10px 50px #5f2f1182;
+    box-shadow: 0 5px 15px #000;
   }
+
   .external img {
     max-width: 45vh;
     max-height: 50vh;
