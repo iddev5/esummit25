@@ -288,18 +288,26 @@ export default function Home() {
         <h1 className="text-3xl md:text-5xl font-bold w-full text-center mb-12 uppercase">
           Frequently Asked Questions
         </h1>
-        <div className="w-[80vw] md:w-[50vw] p-4 rounded-lg flex flex-col mb-10">
-          <Accordion 
-            title='Question'
-            answer='Answer here'
+        <div className="w-[80vw] md:w-[60vw] p-4 rounded-lg flex flex-col mb-10">
+          <Accordion
+            title='Who should attend E-Summit?'
+            answer='E-Summit is designed for aspiring and established entrepreneurs, startup founders, investors, industry professionals, students interested in entrepreneurship, and anyone looking to learn, network, and be inspired in the world of innovation and business.'
           />
           <Accordion 
-            title='Question'
-            answer='Answer here'
+            title='How can I register for E-Summit?'
+            answer='You can register for E-Summit by visiting our official website and following the registration process. Ensure you provide accurate details to complete your registration successfully.'
           />
           <Accordion 
-            title='Question'
-            answer='Answer here'
+            title='Will E-Summit be held in person or virtually?'
+            answer='E-Summit will be held in a hybrid format, offering both in-person and virtual attendance options to accommodate participants from different locations.'
+          />
+          <Accordion 
+            title='What kind of speakers will be at E-Summit?'
+            answer='E-Summit features a wide range of speakers, including successful entrepreneurs, industry experts, investors, and thought leaders. Our speakers come from various sectors, including technology, business, and sustainability.'
+          />
+          <Accordion
+            title='Will there be opportunities for networking at E-Summit?'
+            answer='Yes, networking is a key aspect of E-Summit. We will have dedicated networking sessions, social events, and opportunities to connect with speakers, investors, mentors, and fellow attendees throughout the summit.'
           />
         </div>
 
