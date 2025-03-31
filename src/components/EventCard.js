@@ -20,15 +20,9 @@ export default function EventCard({ logo, title, desc, reg_url, details_url }) {
         <a href={reg_url} target="blank">
           Register
         </a>,
-<<<<<<< HEAD
         <Link href={details_url}>Event&nbsp;Details</Link>,
       ].map((it,idx) => (
         <div key={idx} className="w-[150px] bg-black p-2 px-4 text-center rounded-lg cursor-pointer hover:scale-105 transition">
-=======
-        <Link href={`/events/details/${details_url}`}>Event&nbsp;Details</Link>,
-      ].map((it) => (
-        <div className="w-[150px] bg-black p-2 px-4 text-center rounded-lg cursor-pointer hover:scale-105 transition">
->>>>>>> a5443b043c2417894ea4ee8c9b9003c79df007ea
           {it}
         </div>
       ))}
