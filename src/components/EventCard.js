@@ -20,7 +20,7 @@ export default function EventCard({ logo, title, desc, reg_url, details_url }) {
         <a href={reg_url} target="blank">
           Register
         </a>,
-        <Link href={details_url}>Event&nbsp;Details</Link>,
+        <Link href={`/events/details/${details_url}`}>Event&nbsp;Details</Link>,
       ].map((it) => (
         <div className="w-[150px] bg-black p-2 px-4 text-center rounded-lg cursor-pointer hover:scale-105 transition">
           {it}

@@ -25,6 +25,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  display: flex;
 }
 
 .flip-card-front {
