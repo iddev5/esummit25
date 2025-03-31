@@ -128,6 +128,7 @@ export default function Home() {
     );
 
     window.addEventListener("scroll", () => {
+// sourcery skip: use-object-destructuring
       const scrollY = window.scrollY;
       const scrollX = -scrollY * 0.5;
       for (let h of horizontalScrollContainer)
@@ -187,37 +188,40 @@ export default function Home() {
         </video>
       </div> */}
 
-      {/* <div className="p-4 pb-12">
+      <div className="p-4 pb-12">
         <div className="relative w-full overflow-x-hidden">
           <div className="flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
             {Array(15)
               .fill(0)
-              .map(() => (
-                <ImageCard />
+              .map((_, index) => (
+                <ImageCard key={`row1-${index}`} />
               ))}
           </div>
           <div className="relative left-[12.5%] flex gap-2 md:gap-5 horizontal-scroll-container pb-2 md:pb-5">
             {Array(15)
               .fill(0)
-              .map(() => (
-                <ImageCard />
+              .map((_, index) => (
+                <ImageCard key={`row2-${index}`} />
               ))}
           </div>
           <div className="relative left-[25%] flex gap-2 md:gap-5 horizontal-scroll-container">
             {Array(15)
               .fill(0)
-              .map(() => (
-                <ImageCard />
+              .map((_, index) => (
+                <ImageCard key={`row3-${index}`} />
               ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="flex flex-col items-center mt-12">
-        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 my-10">EVENTS</h1>
+        <h1 className="text-3xl md:text-8xl font-bold text-[#ffd35b] w-full text-center opacity-80 my-10">
+          EVENTS
+        </h1>
         <div className="flex w-[65vw] justify-center gap-8 my-8 flex-wrap">
-          {events.map((it) => (
+          {events.map((it, index) => (
             <EventCard
+              key={index}
               logo={it.logo}
               title={it.title}
               desc={it.desc}
@@ -236,20 +240,17 @@ export default function Home() {
           <div className="flex animate-marquee">
             {speakers.map((it, index) => (
               <SpeakerCard
-                key={index}
+                key={`speaker-${index}`}
                 photo={it.img}
                 name={it.name}
                 desig={it.desig}
               />
             ))}
           </div>
-          <div
-            className="flex animate-marquee"
-            aria-hidden="true"
-          >
+          <div className="flex animate-marquee" aria-hidden="true">
             {speakers.map((it, index) => (
               <SpeakerCard
-                key={`clone-${index}`}
+                key={`speaker-clone-${index}`}
                 photo={it.img}
                 name={it.name}
                 desig={it.desig}
@@ -266,16 +267,17 @@ export default function Home() {
         <div className="relative flex overflow-x-hidden w-full">
           <div className="flex animate-marquee2">
             {sponsors.map((it, index) => (
-              <SponsorCard key={index} photo={it.img} name={it.name} />
+              <SponsorCard 
+                key={`sponsor-${index}`}
+                photo={it.img} 
+                name={it.name} 
+              />
             ))}
           </div>
-          <div
-            className="flex animate-marquee2"
-            aria-hidden="true"
-          >
+          <div className="flex animate-marquee2" aria-hidden="true">
             {sponsors.map((it, index) => (
               <SponsorCard
-                key={`clone-${index}`}
+                key={`sponsor-clone-${index}`}
                 photo={it.img}
                 name={it.name}
               />
@@ -290,27 +292,26 @@ export default function Home() {
         </h1>
         <div className="w-[80vw] md:w-[60vw] p-4 rounded-lg flex flex-col mb-10">
           <Accordion
-            title='Who should attend E-Summit?'
-            answer='E-Summit is designed for aspiring and established entrepreneurs, startup founders, investors, industry professionals, students interested in entrepreneurship, and anyone looking to learn, network, and be inspired in the world of innovation and business.'
-          />
-          <Accordion 
-            title='How can I register for E-Summit?'
-            answer='You can register for E-Summit by visiting our official website and following the registration process. Ensure you provide accurate details to complete your registration successfully.'
-          />
-          <Accordion 
-            title='Will E-Summit be held in person or virtually?'
-            answer='E-Summit will be held in a hybrid format, offering both in-person and virtual attendance options to accommodate participants from different locations.'
-          />
-          <Accordion 
-            title='What kind of speakers will be at E-Summit?'
-            answer='E-Summit features a wide range of speakers, including successful entrepreneurs, industry experts, investors, and thought leaders. Our speakers come from various sectors, including technology, business, and sustainability.'
+            title="Who should attend E-Summit?"
+            answer="E-Summit is designed for aspiring and established entrepreneurs, startup founders, investors, industry professionals, students interested in entrepreneurship, and anyone looking to learn, network, and be inspired in the world of innovation and business."
           />
           <Accordion
-            title='Will there be opportunities for networking at E-Summit?'
-            answer='Yes, networking is a key aspect of E-Summit. We will have dedicated networking sessions, social events, and opportunities to connect with speakers, investors, mentors, and fellow attendees throughout the summit.'
+            title="How can I register for E-Summit?"
+            answer="You can register for E-Summit by visiting our official website and following the registration process. Ensure you provide accurate details to complete your registration successfully."
+          />
+          <Accordion
+            title="Will E-Summit be held in person or virtually?"
+            answer="E-Summit will be held in a hybrid format, offering both in-person and virtual attendance options to accommodate participants from different locations."
+          />
+          <Accordion
+            title="What kind of speakers will be at E-Summit?"
+            answer="E-Summit features a wide range of speakers, including successful entrepreneurs, industry experts, investors, and thought leaders. Our speakers come from various sectors, including technology, business, and sustainability."
+          />
+          <Accordion
+            title="Will there be opportunities for networking at E-Summit?"
+            answer="Yes, networking is a key aspect of E-Summit. We will have dedicated networking sessions, social events, and opportunities to connect with speakers, investors, mentors, and fellow attendees throughout the summit."
           />
         </div>
-
       </div>
     </>
   );
