@@ -18,20 +18,19 @@ export default function EventDetails({ params }) {
         <h1 className="text-4xl mt-16 mb-8">ABOUT</h1>
         <p className="w-[70vw] text-justify text-xl text-gray-300 hover:text-gray-400">{event.longdesc}</p>
 
-        <h1 className="text-4xl mt-16 mb-8">FAQs</h1>
-        <div className="w-[80vw] md:w-[50vw] p-4 flex flex-col mb-10">
-            <Accordion 
-                title='Hello there, are you ok?'
-                answer='No i m not'
-            />
-            <Accordion 
-                title='Hello there, are you ok?'
-                answer='No i m not'
-            />
-            <Accordion 
-                title='Hello there, are you ok?'
-                answer='No i m not'
-            />
-        </div>
+        { 
+            event.faq &&
+            <>
+                <h1 className="text-4xl mt-16 mb-8">FAQs</h1>
+                <div className="w-[80vw] md:w-[50vw] p-4 flex flex-col mb-10">
+                    {event.faq.map(item =>
+                        <Accordion 
+                            title={item.title}
+                            answer={item.answer}
+                        />
+                    )}
+                </div>
+            </>
+        }
     </div>
 }
